@@ -1,0 +1,33 @@
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<!--
+  `<mail-chimp></mail-chimp>` mail-chimp
+  @demo demo.html
+-->
+<dom-module id="mail-chimp">
+  <template>
+    <style>:host {display:inline-block;color:#000;background:#fff}</style>
+    <form action="[[formAction]]" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <paper-input label="email" value="{{mail}}">
+    </paper-input>
+    <input type="email" hidden value="[[mail]]" name="EMAIL" class="required email" id="mce-EMAIL">
+    
+    <div id="mce-responses" class="clear">
+    <div class="response" id="mce-error-response" style="display:none"></div>
+    <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>    
+       <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c7e2ceb5401024cc0c556db82_347409dce8" tabindex="-1" value=""></div>
+    <paper-button on-tap="_submit"> Sign Up </paper-button>
+       </div>
+    </form>
+    </div>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "mail-chimp",
+    _submit: function(undefined){
+      document.getElementById('mc-embedded-subscribe-form').submit()
+    },
+  })
+</script>
