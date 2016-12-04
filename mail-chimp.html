@@ -18,10 +18,11 @@
 <script>
   Polymer({
     is: "mail-chimp",
-    _submit: function(undefined){
+    _submit: function(){
       this.$['mc-embedded-subscribe-form'].submit()
     },
-    validate: function(undefined){
+    validate: function(){
+      this.mail = this.mail.trim()
       this.$.email.validate()
     },
   })
